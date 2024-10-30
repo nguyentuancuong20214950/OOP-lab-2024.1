@@ -1,0 +1,10 @@
+Quest: When should accessor methods be used? 
+
+	Accessor methods, also known as getters and setters, are used to access or modify the values of private instance variables of a class. They should be used when we want to provide controlled access to the private fields of a class while enforcing encapsulation.
+	But we shouldn't use accessor methods unless absolutely necessary because these methods expose information about how a class is implemented and as a consequence make your code harder to maintain.
+
+Quest: If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this? 
+
+	Since Java only allows us to create multiple constructor methods with the same name but with difference in type of parameters. This is called overloading method. So when we want to create a constructor method to build a DVD by title then create a constructor method to build a DVD by category, but these 2 variables have the same type ( both are String )
+=> The answer is No.
+
