@@ -1,9 +1,24 @@
-2.1. I think I prefer the method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd because I don't have to create another array just to save dvd in order to add to the cart array.
+9. Which classes are aggregates of other classes?
+	Class CompactDisc is the aggregate of class Track.
+	Class Cart and Store are the aggregates of class Media.
 
-3.
-- Java is pass-by-value
-- After the call of swap(jungleDVD, cinderellaDVD), the values of their references are copied into the parameters o1 and o2 respectively. Inside the swap method, the references o1 and o2 are swapped. However, this only affects the local variables o1 and o2 within the swap method. The original references jungleDVD and cinderellaDVD in the main method are not modified, and that's why the titles remain unchanged in the main method after calling swap(jungleDVD, cinderellaDVD).
-- After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()), the title of the JungleDVD changed. The reason is that Java object variables are simply references that point to real objects in the memory heap. Therefore, even though Java passes parameters to methods by value, if the variable points to an object reference, the real object will also be changed.
+10. If the passing object is not an instance of Media, what happens?
+	If the passing object is not an instance of Media, it returns false.
 
-6. For the toString() method, String should be the return type since it contains letters, numbers, and symbols.
+11. The output is:
+	ID - 5. Book - khonggiadinh - slice of life - [] - $55.6
+	ID - 1. DVD - starWar - action - null - 0s - $1563.6
+	ID - 3. CD - superman - action - null - null - 0s - $305.5
+The toString() method is overridden in a subclass to provide a more meaningful or customized string representation of the object.
+
+12.
+-What class should implement the Comparable interface?
+	The class that have the item to compare should implement the Comparable interface. In this case is class Media.
+-In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+	If we want to sort the items by title, then the compareTo() method would compare the titles of the items. If we want to sort the items by cost, then the compareTo() method would compare the costs of the items.
+-Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+	Yes, we can have two ordering rules of the item (by title then cost and by cost then title) if we use Comparable interface approach. We can do this by creating two different implementations of the Comparable interface. One implementation would sort the items by title, then cost. The other implementation would sort the items by cost, then title.
+-Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+	To allow DVDs to have a different ordering rule from the other media types. The DVD class would override the compareTo() method to sort the DVDs by title, then decreasing length, then cost.
+
 
